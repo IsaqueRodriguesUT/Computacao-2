@@ -29,7 +29,7 @@ int main()
     printf("-------antes de ler---------\n");
     for (i = 0; i < 3; i++)
     {
-        //para conferir se as variaveis não ter valor
+        //para conferir se as variaveis nÃ£o ter valor
         printf("\nNome %d: %s", i, nome[i]);
         printf("\nCPF %d: %s", i, cpf[i]);
     }
@@ -58,11 +58,10 @@ void leitura(FILE* arq, char nome[3][100], char cpf[3][16])
             fread(nome[i], sizeof(char), 100, arq);
             fread(cpf[i], sizeof(char), 16, arq);
         }
+        fclose(arq);
     }
     else
         printf("Problema de abertura");
-
-    fclose(arq);
 }
 void gravar(FILE* arq, char nome[3][100], char cpf[3][16])
 {
@@ -76,9 +75,9 @@ void gravar(FILE* arq, char nome[3][100], char cpf[3][16])
             fwrite(nome[i], sizeof(char), 100, arq);
             fwrite(cpf[i], sizeof(char), 16, arq);
         }
+        fclose(arq);
     }
     else
         printf("Problema de abertura");
-
-    fclose(arq);
 }
+
