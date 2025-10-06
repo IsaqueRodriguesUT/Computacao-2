@@ -29,14 +29,16 @@ int main()
     printf("-------antes de ler---------\n");
     for (i = 0; i < 3; i++)
     {
-        printf("Nome %d: %s", i, nome[i]);
-        printf("CPF %d: %s", i, cpf[i]);
+        //para conferir se as variaveis não ter valor
+        printf("\nNome %d: %s", i, nome[i]);
+        printf("\nCPF %d: %s", i, cpf[i]);
     }
     leitura(arq, nome, cpf);
     
     printf("-------depois de ler---------\n");
     for (i = 0; i < 3; i++)
     {
+        
         printf("Nome %d: %s",i+1,nome[i]);
         printf("CPF %d: %s", i+1, cpf[i]);
     }
