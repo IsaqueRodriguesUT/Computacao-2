@@ -15,9 +15,9 @@ int main()
 
     for (i = 0; i < 3; i++)
     {
-        printf("Digite ssso %d nome: ",i);
+        printf("Digite o %d nome: ",i+1);
         fgets(nome[i], 100, stdin);
-        printf("Digite o %d cpf: ",i);
+        printf("Digite o %d cpf: ",i+1);
         fgets(cpf[i], 16, stdin);
     }
 
@@ -80,4 +80,5 @@ void gravar(FILE* arq, char nome[3][100], char cpf[3][16])
     else
         printf("Problema de abertura");
 }
+
 
