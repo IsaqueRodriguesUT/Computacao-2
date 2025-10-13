@@ -20,7 +20,7 @@ int main() {
     }
     else
     {
-        //lê a primeira linha, onde contem o tamanho da matriz e quantas anuladas
+        //lÃª a primeira linha, onde contem o tamanho da matriz e quantas anuladas
             if (fscanf(arq, "%d %d %d\n", &nlinha, &ncoluna, &anuladas) != 3)
             {
                 printf("\nERRO na leitura");
@@ -34,12 +34,12 @@ int main() {
                 mat[i] = (int*)malloc(ncoluna * sizeof(int));
             }
             for (int i = 0; i < nlinha; i++) {
-                for (int j = 0; j < ncoluna; i++) {
+                for (int j = 0; j < ncoluna; j++) {
                     mat[i][j] = 1;
                 }
             }
   
-            //uma laço for para ler quais serão anuladas
+            //uma laÃ§o for para ler quais serÃ£o anuladas
                 for (int i = 0; i < anuladas; i++)
             {
                 if (fscanf(arq, "%d %d\n", &linha, &coluna) != 2)
@@ -53,10 +53,10 @@ int main() {
             }
         }
 	fclose(arq);
-    arq =fopen("matriz_saida.txt", "+");
+    arq =fopen("matriz_saida.txt", "w");
 
     for (int i = 0; i < nlinha; i++) {
-        for (int j = 0; j < ncoluna; i++) {
+        for (int j = 0; j < ncoluna; j++) {
             fprintf(arq, "%d ",mat[i][j]);
         }
         fprintf(arq,"\n");
@@ -64,10 +64,11 @@ int main() {
 
     fclose(arq);
 
-    for (int i = 0; i < linha; i++) {
+    for (int i = 0; i < nlinha; i++) {
         free(mat[i]);
     }
     free(mat);
 
 	return 0;
+
 }
